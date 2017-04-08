@@ -32,6 +32,7 @@
 ****************************************************************************/
 
 #include "mainwindow.h"
+#include "Headers.h"
 
 #include <QApplication>
 #include <QPainterPath>
@@ -149,6 +150,7 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QMap<QString, QSize> customSizeHints = parseCustomSizeHints(argc, argv);
+    wd_setup(argc, argv);
     MainWindow mainWin(customSizeHints);
     mainWin.resize(800, 600);
     mainWin.show();
