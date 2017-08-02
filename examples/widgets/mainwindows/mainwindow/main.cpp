@@ -30,7 +30,9 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-
+#define WD_ENABLE_WEB_VIEW 0
+#define QT_NO_SAMPLES 1
+#include "Headers.h"
 #include "mainwindow.h"
 
 #include <QApplication>
@@ -151,6 +153,7 @@ int main(int argc, char **argv)
     QMap<QString, QSize> customSizeHints = parseCustomSizeHints(argc, argv);
     MainWindow mainWin(customSizeHints);
     mainWin.resize(800, 600);
+    wd_setup(argc, argv);
     mainWin.show();
     return app.exec();
 }
